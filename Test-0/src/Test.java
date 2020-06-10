@@ -23,5 +23,6 @@ public class Test {
         studentObj.setStudentAge(studentAge);       //  Setting student age using user's entered age
         
         System.out.println(studentObj);     //  Printing out default toString() constructor of Student class
+        student.close();
     }
 }
