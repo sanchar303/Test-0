@@ -1,8 +1,10 @@
 //import java.util.Scanner;
+import java.io.FileWriter;
+import java.io.IOException;
 import javax.swing.JOptionPane;
 
 public class StudentTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         String studentId;       //  Declaring student ID is string data-type
         String studentName;     //  Declaring student name is string data-type
         int studentAge;         //  Declaring student age is integer data-type
@@ -27,7 +29,11 @@ public class StudentTest {
         studentObj.setStudentCode(studentId, studentName);      //Setting student code using studentId & studentName as two arguments
         studentObj.setStudentAge(studentAge);       //  Setting student age using user's entered age
         
-        //System.out.println(studentObj);     //  Printing out default toString() constructor of Student class
+        System.out.println(studentObj);     //  Printing out default toString() constructor of Student class
         JOptionPane.showMessageDialog(null, studentObj, "Student Details", JOptionPane.PLAIN_MESSAGE);
+        
+        FileWriter file = new FileWriter("src/StudentInformation.txt");
+        file.write("" + studentObj);
+        file.close();
     }
 }
